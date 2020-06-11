@@ -6,7 +6,7 @@ import (
 )
 
 func hello(res http.ResponseWriter, req *http.Request) {
-	fmt.Fprint(res, "Hello, my name is Paul Chen.")
+	fmt.Fprint(res, "Hello, my name is John Smith.")
 }
 
 func main() {
