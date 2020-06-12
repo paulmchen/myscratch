@@ -9,9 +9,10 @@ import (
 func homePage(res http.ResponseWriter, req *http.Request) {
 	if req.URL.Path != "/" {
 		http.NotFound(res, req)
+		fmt.Println("The URL cannot be found.")
 		return
 	}
-	fmt.Fprint(res, "The homepage.")
+	fmt.Fprint(res, "Here is my homepage!")
 }
 
 func main() {
