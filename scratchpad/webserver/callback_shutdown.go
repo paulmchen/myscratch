@@ -7,6 +7,7 @@ import (
 )
 
 func shutdown(res http.ResponseWriter, req *http.Request) {
+	fmt.Printf("The server listening on host %s is shutting down.\n", req.Host)
 	os.Exit(0)
 }
 
