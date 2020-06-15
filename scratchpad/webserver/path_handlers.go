@@ -7,12 +7,12 @@ import (
 	"strings"
 )
 
-func newPathResolver() *pathResolver {
-	return &pathResolver{make(map[string]http.HandlerFunc)}
-}
-
 type pathResolver struct {
 	handlers map[string]http.HandlerFunc
+}
+
+func newPathResolver() *pathResolver {
+	return &pathResolver{make(map[string]http.HandlerFunc)}
 }
 
 func (p *pathResolver) Add(path string, handler http.HandlerFunc) {
@@ -47,7 +47,7 @@ func goodbye(res http.ResponseWriter, req *http.Request) {
 	parts := strings.Split(path, "/")
 	name := parts[2]
 	if name == "" {
-		name = "Inigo Montoya"
+		name = "John Smith"
 	}
 	fmt.Fprint(res, "Goodbye ", name)
 }
