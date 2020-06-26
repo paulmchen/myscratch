@@ -9,7 +9,7 @@ func send(ch chan<- string, done <-chan bool) {
 	for {
 		select {
 		case <-done:
-			fmt.Println("Done")
+			println("Done")
 			close(ch)
 			return
 		default:
